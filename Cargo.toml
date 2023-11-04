@@ -2,6 +2,8 @@
 name = "fill-array"
 version = "0.1.0"
 edition = "2021"
+description = "A rust macro allowing to fill arrays with an expression"
+license = "MIT"
 
 [lib]
 proc-macro = true
