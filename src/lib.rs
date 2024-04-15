@@ -62,14 +62,7 @@ pub fn fill(input: TokenStream) -> TokenStream {
         },
         Length::Constant(ident) => {
             let tokens = quote! {
-                {
-                    let mut array = [#item; #ident];
-                    for i in 1..#ident {
-                        array[i] = #item;
-                    }
-
-                    array
-                }
+                core::array::from_fn::<_, #ident, _>(|_| #item)
             };
 
             tokens.into()
